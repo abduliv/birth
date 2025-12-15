@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>С Днём Рождения, Малика!</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- связь с CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2023/03/30/audio_6b5c6b3b64.mp3" type="audio/mpeg">
+</audio>
+
+<div id="box"></div>
+
+<script>
+const text = `
+👑✨ С ДНЁМ РОЖДЕНИЯ, МАЛИКА! ✨👑
+
+💖 Сегодня тебе исполняется 15 лет 💖
+
+Пусть твоя жизнь будет яркой,
+как фейерверки в небе 🎆
+сладкой, как этот тортик 🧁
+и тёплой, как улыбки близких ☀️
+
+🌸 Оставайся такой же доброй,
+милой и особенной 🌸
+Пусть мечты сбываются,
+а каждый день приносит радость ✨
+
+🎀 Ты — настоящая принцесса 🎀
+
+        🧁🧁🧁
+      🧁🧁🧁🧁🧁
+    🧁🧁🧁🧁🧁🧁🧁
+          |||
+          |||
+
+💫 С любовью и самыми тёплыми пожеланиями 💫
+`;
+
+let i = 0;
+const speed = 35;
+const box = document.getElementById("box");
+
+function typeWriter() {
+    if (i < text.length) {
+        box.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
+typeWriter();
+
+/* сердечки */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (16 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}, 400);
+
+/* фейерверки */
+setInterval(() => {
+    const fw = document.createElement("div");
+    fw.className = "firework";
+    fw.style.left = Math.random() * 100 + "vw";
+    fw.style.top = Math.random() * 50 + "vh";
+    document.body.appendChild(fw);
+    setTimeout(() => fw.remove(), 1500);
+}, 1200);
+</script>
+
+</body>
+</html>
