@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    background: radial-gradient(circle at top, #fbcfe8, #a5b4fc);
+    font-family: "Comic Sans MS", cursive, monospace;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+#box {
+    white-space: pre;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 30px;
+    max-width: 90%;
+    margin: 80px auto;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+/* сердечки */
+.heart {
+    position: absolute;
+    bottom: -20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+/* фейерверки */
+.firework {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: transparent;
+    border-radius: 50%;
+    animation: explode 1.5s infinite;
+}
+
+@keyframes explode {
+    0% {
+        box-shadow: 0 0 #fff;
+    }
+    100% {
+        box-shadow: 30px 0 #f472b6, -30px 0 #60a5fa,
+                    0 30px #fde68a, 0 -30px #a7f3d0,
+                    20px 20px #c4b5fd, -20px -20px #fb7185;
+    }
+}
